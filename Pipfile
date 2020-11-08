@@ -11,10 +11,14 @@ black = "*"
 
 [packages]
 
+boto3 = "*"
 pandas = "*"
 csci-utils = {editable = true,git = "https://github.com/csci-e-29/2020fa-csci-utils-ckevinhill"}
 luigi = "*"
 great-expectations = "*"
+pyarrow = "*"
+sklearn = "*"
+xgboost = "*"
 
 [requires]
 python_version = "3.7"
