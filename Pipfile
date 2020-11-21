@@ -8,13 +8,18 @@ pytest = "*"
 pytest-cov = "*"
 pylint = "*"
 black = "*"
+awscli = "*"
 
 [packages]
 
 pandas = "*"
 csci-utils = {editable = true,git = "https://github.com/csci-e-29/2020fa-csci-utils-ckevinhill"}
 luigi = "*"
+boto3 = "*"
 great-expectations = "*"
+pyarrow = "*"
+sklearn = "*"
+xgboost = "*"
 
 [requires]
 python_version = "3.7"

@@ -1,5 +1,25 @@
+import luigi
+
+from pset_final.tasks.data import DownloadTrainingDataTask
+from pset_final.tasks.inference import XGBoostInferenceTask
+from pset_final.tasks.learn import XGBoostLearnerTask
+from pset_final.tasks.validation import GreatExpectationValidationTask
+
+
 def main():
-    pass
+
+    #    t = XGBoostLearnerTask(
+    #        data_file="wine_quality_1.parquet",
+    #        target_column="x",
+    #        feature_columns="y",
+    #        model_file="model.dat",
+    #    )
+
+    # t = XGBoostLearnerTask(data_file="wine_quality_1.parquet")
+
+    t = XGBoostInferenceTask(data_file="wine_quality_2.parquet")
+
+    luigi.build([t], local_scheduler=True)
 
 
 if __name__ == "__main__":
