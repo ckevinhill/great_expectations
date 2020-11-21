@@ -22,14 +22,14 @@ class XGBoostLearnerTask(Task):
     # Location to store output:
     model_dir = luigi.Parameter(default="data")
     model_sub_dir = luigi.Parameter(default="saved_models")
-    model_file = luigi.Parameter("wine_quality.dat")
+    model_file = luigi.Parameter(default="wine_quality.dat")
 
     training_split = luigi.FloatParameter(default=0.25)
 
     def requires(self):
         return {
-            "data": DownloadTrainingDataTask(),
-            "validation": GreatExpectationValidationTask(),
+            "data": DownloadTrainingDataTask(s3_file=self.data_file),
+            "validation": GreatExpectationValidationTask(data_file=self.data_file),
         }
 
     def output(self):
@@ -63,6 +63,8 @@ class XGBoostLearnerTask(Task):
 
         model = xgb.XGBClassifier(random_state=1)
         model.fit(X_train, y_train)
+
+        # TODO: Could add validation output
 
         with self.output().open("wb") as w:
             pickle.dump(model, w)

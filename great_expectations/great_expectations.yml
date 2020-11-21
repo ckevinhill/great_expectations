@@ -14,15 +14,15 @@ config_version: 2.0
 # You can use the CLI command `great_expectations datasource new` to help you
 # add a new datasource. Read more at https://docs.greatexpectations.io/en/latest/reference/core_concepts/datasource_reference.html
 datasources:
-  sample_data:
-    class_name: PandasDatasource
+  data_ds:
     batch_kwargs_generators:
       subdir_reader:
         class_name: SubdirReaderBatchKwargsGenerator
-        base_directory: ..\data/sample_data/
+        base_directory: ..\data
     data_asset_type:
       class_name: PandasDataset
       module_name: great_expectations.dataset
+    class_name: PandasDatasource
     module_name: great_expectations.datasource
 
 # This config file supports variable substitution which enables: 1) keeping
@@ -124,6 +124,6 @@ data_docs_sites:
       class_name: DefaultSiteIndexBuilder
 
 anonymous_usage_statistics:
-  data_context_id: ef6ea20a-f676-4ef3-946c-854e79da8678
+  data_context_id: 018627f3-2d1b-4e0b-bf32-088c746c6d77
   enabled: true
 notebooks:
