@@ -2,6 +2,7 @@ import os
 import pickle
 
 import luigi
+import numpy as np
 import pandas as pd
 import xgboost as xgb
 from luigi import LocalTarget, Task
@@ -27,19 +28,27 @@ class XGBoostInferenceTask(Task):
     results_sub_dir = luigi.Parameter(default="scored_results")
     results_file = luigi.Parameter(default="scores.csv")
 
+    skip_validation = luigi.BoolParameter(default=False)
+
     def requires(self):
         return {
             "data": DownloadTrainingDataTask(
                 download_sub_path=self.data_sub_dir, s3_file=self.data_file
             ),
             "validation": GreatExpectationValidationTask(
-                data_sub_dir=self.data_sub_dir, data_file=self.data_file
+                data_sub_dir=self.data_sub_dir,
+                data_file=self.data_file,
+                skip_validation=self.skip_validation,
             ),
         }
 
     def output(self):
+        data_file = str(self.data_file).replace(".", "_")
+
         return LocalTarget(
-            os.path.join(self.results_dir, self.results_sub_dir, self.results_file),
+            os.path.join(
+                self.results_dir, self.results_sub_dir, data_file, self.results_file
+            ),
             format=luigi.format.Nop,
         )
 
@@ -53,14 +62,18 @@ class XGBoostInferenceTask(Task):
         df["type"] = lbl.fit_transform(df["type"].astype(str))
 
         # Separate feature variables and target variable
-        X = df.drop(["quality", "goodquality"], axis=1)
-        y = df["goodquality"]
+        X = df.drop(["quality"], axis=1)
 
         # Normalize feature variables
         X = StandardScaler().fit_transform(X)
 
-        loaded_model = pickle.load(open(self.model_file, "rb"))
-        result = loaded_model.score(X)
+        loaded_model = pickle.load(
+            open(os.path.join(self.data_dir, self.model_file), "rb")
+        )
 
-        # with self.output().open("wb") as w:
-        #     pickle.dump(model, w)
+        # Created predicted values:
+        y_pred = loaded_model.predict(X)
+
+        # Output scores to csv:
+        os.makedirs(os.path.dirname(self.output().path))
+        np.savetxt(self.output().path, y_pred, delimiter=",")

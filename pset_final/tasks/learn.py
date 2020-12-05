@@ -8,6 +8,7 @@ from luigi import LocalTarget, Task
 from pset_final.tasks.data import DownloadTrainingDataTask
 from pset_final.tasks.validation import GreatExpectationValidationTask
 from sklearn import preprocessing
+from sklearn.metrics import classification_report
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 
@@ -25,11 +26,14 @@ class XGBoostLearnerTask(Task):
     model_file = luigi.Parameter(default="wine_quality.dat")
 
     training_split = luigi.FloatParameter(default=0.25)
+    skip_validation = luigi.BoolParameter(default=False)
 
     def requires(self):
         return {
             "data": DownloadTrainingDataTask(s3_file=self.data_file),
-            "validation": GreatExpectationValidationTask(data_file=self.data_file),
+            "validation": GreatExpectationValidationTask(
+                data_file=self.data_file, skip_validation=self.skip_validation
+            ),
         }
 
     def output(self):
@@ -64,7 +68,10 @@ class XGBoostLearnerTask(Task):
         model = xgb.XGBClassifier(random_state=1)
         model.fit(X_train, y_train)
 
-        # TODO: Could add validation output
+        # Classification accuracy metrics:
+        y_pred = model.predict(X_test)
+        print(classification_report(y_test, y_pred))
 
+        # Serialize model for later use:
         with self.output().open("wb") as w:
             pickle.dump(model, w)

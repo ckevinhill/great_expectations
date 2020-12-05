@@ -1,0 +1,1021 @@
+{
+  "data_asset_type": "Dataset",
+  "expectation_suite_name": "data_ds",
+  "expectations": [
+    {
+      "expectation_type": "expect_table_column_count_to_equal",
+      "kwargs": {
+        "value": 13
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_table_columns_to_match_ordered_list",
+      "kwargs": {
+        "column_list": [
+          "fixed acidity",
+          "volatile acidity",
+          "citric acid",
+          "residual sugar",
+          "chlorides",
+          "free sulfur dioxide",
+          "total sulfur dioxide",
+          "density",
+          "pH",
+          "sulphates",
+          "alcohol",
+          "quality",
+          "type"
+        ]
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_not_be_null",
+      "kwargs": {
+        "column": "fixed acidity"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_min_to_be_between",
+      "kwargs": {
+        "column": "fixed acidity",
+        "max_value": 6.0,
+        "min_value": 4.0
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_max_to_be_between",
+      "kwargs": {
+        "column": "fixed acidity",
+        "max_value": 14.3,
+        "min_value": 12.3
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_mean_to_be_between",
+      "kwargs": {
+        "column": "fixed acidity",
+        "max_value": 9.465625,
+        "min_value": 7.465624999999999
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_median_to_be_between",
+      "kwargs": {
+        "column": "fixed acidity",
+        "max_value": 9.2,
+        "min_value": 7.199999999999999
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_quantile_values_to_be_between",
+      "kwargs": {
+        "allow_relative_error": false,
+        "column": "fixed acidity",
+        "quantile_ranges": {
+          "quantiles": [
+            0.05,
+            0.25,
+            0.5,
+            0.75,
+            0.95
+          ],
+          "value_ranges": [
+            [
+              5.4,
+              7.4
+            ],
+            [
+              6.3,
+              8.3
+            ],
+            [
+              7.199999999999999,
+              9.2
+            ],
+            [
+              8.1,
+              10.1
+            ],
+            [
+              10.8,
+              12.8
+            ]
+          ]
+        }
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_not_be_null",
+      "kwargs": {
+        "column": "volatile acidity"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_min_to_be_between",
+      "kwargs": {
+        "column": "volatile acidity",
+        "max_value": 1.16,
+        "min_value": -0.84
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_max_to_be_between",
+      "kwargs": {
+        "column": "volatile acidity",
+        "max_value": 2.1799999999999997,
+        "min_value": 0.17999999999999994
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_mean_to_be_between",
+      "kwargs": {
+        "column": "volatile acidity",
+        "max_value": 1.5150937500000001,
+        "min_value": -0.48490625
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_median_to_be_between",
+      "kwargs": {
+        "column": "volatile acidity",
+        "max_value": 1.5,
+        "min_value": -0.5
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_quantile_values_to_be_between",
+      "kwargs": {
+        "allow_relative_error": false,
+        "column": "volatile acidity",
+        "quantile_ranges": {
+          "quantiles": [
+            0.05,
+            0.25,
+            0.5,
+            0.75,
+            0.95
+          ],
+          "value_ranges": [
+            [
+              -0.71,
+              1.29
+            ],
+            [
+              -0.62,
+              1.38
+            ],
+            [
+              -0.5,
+              1.5
+            ],
+            [
+              -0.385,
+              1.615
+            ],
+            [
+              -0.21999999999999997,
+              1.78
+            ]
+          ]
+        }
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_not_be_null",
+      "kwargs": {
+        "column": "citric acid"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_min_to_be_between",
+      "kwargs": {
+        "column": "citric acid",
+        "max_value": 1.0,
+        "min_value": -1.0
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_max_to_be_between",
+      "kwargs": {
+        "column": "citric acid",
+        "max_value": 1.69,
+        "min_value": -0.31000000000000005
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_mean_to_be_between",
+      "kwargs": {
+        "column": "citric acid",
+        "max_value": 1.294125,
+        "min_value": -0.705875
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_median_to_be_between",
+      "kwargs": {
+        "column": "citric acid",
+        "max_value": 1.31,
+        "min_value": -0.69
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_quantile_values_to_be_between",
+      "kwargs": {
+        "allow_relative_error": false,
+        "column": "citric acid",
+        "quantile_ranges": {
+          "quantiles": [
+            0.05,
+            0.25,
+            0.5,
+            0.75,
+            0.95
+          ],
+          "value_ranges": [
+            [
+              -0.99,
+              1.01
+            ],
+            [
+              -0.88,
+              1.12
+            ],
+            [
+              -0.69,
+              1.31
+            ],
+            [
+              -0.54,
+              1.46
+            ],
+            [
+              -0.43999999999999995,
+              1.56
+            ]
+          ]
+        }
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_not_be_null",
+      "kwargs": {
+        "column": "residual sugar"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_min_to_be_between",
+      "kwargs": {
+        "column": "residual sugar",
+        "max_value": 2.2,
+        "min_value": 0.19999999999999996
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_max_to_be_between",
+      "kwargs": {
+        "column": "residual sugar",
+        "max_value": 14.8,
+        "min_value": 12.8
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_mean_to_be_between",
+      "kwargs": {
+        "column": "residual sugar",
+        "max_value": 3.4984375,
+        "min_value": 1.4984375
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_median_to_be_between",
+      "kwargs": {
+        "column": "residual sugar",
+        "max_value": 3.2,
+        "min_value": 1.2000000000000002
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_quantile_values_to_be_between",
+      "kwargs": {
+        "allow_relative_error": false,
+        "column": "residual sugar",
+        "quantile_ranges": {
+          "quantiles": [
+            0.05,
+            0.25,
+            0.5,
+            0.75,
+            0.95
+          ],
+          "value_ranges": [
+            [
+              0.5,
+              2.5
+            ],
+            [
+              1.0,
+              3.0
+            ],
+            [
+              1.2000000000000002,
+              3.2
+            ],
+            [
+              1.6,
+              3.6
+            ],
+            [
+              3.0999999999999996,
+              5.1
+            ]
+          ]
+        }
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_not_be_null",
+      "kwargs": {
+        "column": "chlorides"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_min_to_be_between",
+      "kwargs": {
+        "column": "chlorides",
+        "max_value": 1.041,
+        "min_value": -0.959
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_max_to_be_between",
+      "kwargs": {
+        "column": "chlorides",
+        "max_value": 1.341,
+        "min_value": -0.659
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_mean_to_be_between",
+      "kwargs": {
+        "column": "chlorides",
+        "max_value": 1.08976875,
+        "min_value": -0.91023125
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_median_to_be_between",
+      "kwargs": {
+        "column": "chlorides",
+        "max_value": 1.08,
+        "min_value": -0.92
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_quantile_values_to_be_between",
+      "kwargs": {
+        "allow_relative_error": false,
+        "column": "chlorides",
+        "quantile_ranges": {
+          "quantiles": [
+            0.05,
+            0.25,
+            0.5,
+            0.75,
+            0.95
+          ],
+          "value_ranges": [
+            [
+              -0.945,
+              1.055
+            ],
+            [
+              -0.927,
+              1.073
+            ],
+            [
+              -0.92,
+              1.08
+            ],
+            [
+              -0.908,
+              1.092
+            ],
+            [
+              -0.839,
+              1.161
+            ]
+          ]
+        }
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_not_be_null",
+      "kwargs": {
+        "column": "free sulfur dioxide"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_min_to_be_between",
+      "kwargs": {
+        "column": "free sulfur dioxide",
+        "max_value": 4.0,
+        "min_value": 2.0
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_max_to_be_between",
+      "kwargs": {
+        "column": "free sulfur dioxide",
+        "max_value": 53.0,
+        "min_value": 51.0
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_mean_to_be_between",
+      "kwargs": {
+        "column": "free sulfur dioxide",
+        "max_value": 16.53125,
+        "min_value": 14.53125
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_median_to_be_between",
+      "kwargs": {
+        "column": "free sulfur dioxide",
+        "max_value": 14.0,
+        "min_value": 12.0
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_quantile_values_to_be_between",
+      "kwargs": {
+        "allow_relative_error": false,
+        "column": "free sulfur dioxide",
+        "quantile_ranges": {
+          "quantiles": [
+            0.05,
+            0.25,
+            0.5,
+            0.75,
+            0.95
+          ],
+          "value_ranges": [
+            [
+              3.0,
+              5.0
+            ],
+            [
+              6.0,
+              8.0
+            ],
+            [
+              12.0,
+              14.0
+            ],
+            [
+              21.0,
+              23.0
+            ],
+            [
+              35.0,
+              37.0
+            ]
+          ]
+        }
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_not_be_null",
+      "kwargs": {
+        "column": "total sulfur dioxide"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_min_to_be_between",
+      "kwargs": {
+        "column": "total sulfur dioxide",
+        "max_value": 8.0,
+        "min_value": 6.0
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_max_to_be_between",
+      "kwargs": {
+        "column": "total sulfur dioxide",
+        "max_value": 153.0,
+        "min_value": 151.0
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_mean_to_be_between",
+      "kwargs": {
+        "column": "total sulfur dioxide",
+        "max_value": 47.49375,
+        "min_value": 45.49375
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_median_to_be_between",
+      "kwargs": {
+        "column": "total sulfur dioxide",
+        "max_value": 42.0,
+        "min_value": 40.0
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_quantile_values_to_be_between",
+      "kwargs": {
+        "allow_relative_error": false,
+        "column": "total sulfur dioxide",
+        "quantile_ranges": {
+          "quantiles": [
+            0.05,
+            0.25,
+            0.5,
+            0.75,
+            0.95
+          ],
+          "value_ranges": [
+            [
+              10.0,
+              12.0
+            ],
+            [
+              19.0,
+              21.0
+            ],
+            [
+              40.0,
+              42.0
+            ],
+            [
+              61.0,
+              63.0
+            ],
+            [
+              110.0,
+              112.0
+            ]
+          ]
+        }
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_not_be_null",
+      "kwargs": {
+        "column": "density"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_min_to_be_between",
+      "kwargs": {
+        "column": "density",
+        "max_value": 1.9915,
+        "min_value": -0.008499999999999952
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_max_to_be_between",
+      "kwargs": {
+        "column": "density",
+        "max_value": 2.00242,
+        "min_value": 0.0024200000000000887
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_mean_to_be_between",
+      "kwargs": {
+        "column": "density",
+        "max_value": 1.9967966875,
+        "min_value": -0.003203312499999944
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_median_to_be_between",
+      "kwargs": {
+        "column": "density",
+        "max_value": 1.9968,
+        "min_value": -0.0031999999999999806
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_quantile_values_to_be_between",
+      "kwargs": {
+        "allow_relative_error": false,
+        "column": "density",
+        "quantile_ranges": {
+          "quantiles": [
+            0.05,
+            0.25,
+            0.5,
+            0.75,
+            0.95
+          ],
+          "value_ranges": [
+            [
+              -0.00605,
+              1.99395
+            ],
+            [
+              -0.004229999999999956,
+              1.99577
+            ],
+            [
+              -0.0031999999999999806,
+              1.9968
+            ],
+            [
+              -0.0021999999999999797,
+              1.9978
+            ],
+            [
+              -0.00029999999999996696,
+              1.9997
+            ]
+          ]
+        }
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_not_be_null",
+      "kwargs": {
+        "column": "pH"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_min_to_be_between",
+      "kwargs": {
+        "column": "pH",
+        "max_value": 3.88,
+        "min_value": 1.88
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_max_to_be_between",
+      "kwargs": {
+        "column": "pH",
+        "max_value": 5.01,
+        "min_value": 3.01
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_mean_to_be_between",
+      "kwargs": {
+        "column": "pH",
+        "max_value": 4.290125,
+        "min_value": 2.2901249999999997
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_median_to_be_between",
+      "kwargs": {
+        "column": "pH",
+        "max_value": 4.29,
+        "min_value": 2.29
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_quantile_values_to_be_between",
+      "kwargs": {
+        "allow_relative_error": false,
+        "column": "pH",
+        "quantile_ranges": {
+          "quantiles": [
+            0.05,
+            0.25,
+            0.5,
+            0.75,
+            0.95
+          ],
+          "value_ranges": [
+            [
+              2.05,
+              4.05
+            ],
+            [
+              2.17,
+              4.17
+            ],
+            [
+              2.29,
+              4.29
+            ],
+            [
+              2.38,
+              4.38
+            ],
+            [
+              2.53,
+              4.529999999999999
+            ]
+          ]
+        }
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_not_be_null",
+      "kwargs": {
+        "column": "sulphates"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_min_to_be_between",
+      "kwargs": {
+        "column": "sulphates",
+        "max_value": 1.37,
+        "min_value": -0.63
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_max_to_be_between",
+      "kwargs": {
+        "column": "sulphates",
+        "max_value": 2.6100000000000003,
+        "min_value": 0.6100000000000001
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_mean_to_be_between",
+      "kwargs": {
+        "column": "sulphates",
+        "max_value": 1.651125,
+        "min_value": -0.34887499999999994
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_median_to_be_between",
+      "kwargs": {
+        "column": "sulphates",
+        "max_value": 1.62,
+        "min_value": -0.38
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_quantile_values_to_be_between",
+      "kwargs": {
+        "allow_relative_error": false,
+        "column": "sulphates",
+        "quantile_ranges": {
+          "quantiles": [
+            0.05,
+            0.25,
+            0.5,
+            0.75,
+            0.95
+          ],
+          "value_ranges": [
+            [
+              -0.53,
+              1.47
+            ],
+            [
+              -0.44999999999999996,
+              1.55
+            ],
+            [
+              -0.38,
+              1.62
+            ],
+            [
+              -0.29000000000000004,
+              1.71
+            ],
+            [
+              -0.10999999999999999,
+              1.8900000000000001
+            ]
+          ]
+        }
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_not_be_null",
+      "kwargs": {
+        "column": "alcohol"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_min_to_be_between",
+      "kwargs": {
+        "column": "alcohol",
+        "max_value": 9.7,
+        "min_value": 7.699999999999999
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_max_to_be_between",
+      "kwargs": {
+        "column": "alcohol",
+        "max_value": 14.5,
+        "min_value": 12.5
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_mean_to_be_between",
+      "kwargs": {
+        "column": "alcohol",
+        "max_value": 11.356979166666665,
+        "min_value": 9.356979166666665
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_median_to_be_between",
+      "kwargs": {
+        "column": "alcohol",
+        "max_value": 11.05,
+        "min_value": 9.05
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_quantile_values_to_be_between",
+      "kwargs": {
+        "allow_relative_error": false,
+        "column": "alcohol",
+        "quantile_ranges": {
+          "quantiles": [
+            0.05,
+            0.25,
+            0.5,
+            0.75,
+            0.95
+          ],
+          "value_ranges": [
+            [
+              8.2,
+              10.2
+            ],
+            [
+              8.5,
+              10.5
+            ],
+            [
+              9.1,
+              11.1
+            ],
+            [
+              10.0,
+              12.0
+            ],
+            [
+              11.4,
+              13.4
+            ]
+          ]
+        }
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_distinct_values_to_be_in_set",
+      "kwargs": {
+        "column": "type",
+        "value_set": [
+          "red"
+        ]
+      },
+      "meta": {}
+    }
+  ],
+  "meta": {
+    "BasicSuiteBuilderProfiler": {
+      "batch_kwargs": {
+        "data_asset_name": "sample",
+        "datasource": "data_ds",
+        "path": "C:\\Git-Projects\\csc_e29\\2020fa-pset-final-ckevinhill\\great_expectations\\..\\data\\sample\\wine_quality_1.parquet"
+      },
+      "created_at": 1605926910.4708798,
+      "created_by": "BasicSuiteBuilderProfiler"
+    },
+    "citations": [
+      {
+        "batch_kwargs": {
+          "data_asset_name": "sample",
+          "datasource": "data_ds",
+          "path": "C:\\Git-Projects\\csc_e29\\2020fa-pset-final-ckevinhill\\great_expectations\\..\\data\\sample\\wine_quality_1.parquet"
+        },
+        "batch_markers": {
+          "ge_load_time": "20201121T024830.320730Z",
+          "pandas_data_fingerprint": "9222a01639db9665ed70dde7f5edb184"
+        },
+        "batch_parameters": null,
+        "citation_date": "20201121T024830.516970Z",
+        "comment": "BasicSuiteBuilderProfiler added a citation based on the current batch."
+      }
+    ],
+    "columns": {
+      "alcohol": {
+        "description": ""
+      },
+      "chlorides": {
+        "description": ""
+      },
+      "citric acid": {
+        "description": ""
+      },
+      "density": {
+        "description": ""
+      },
+      "fixed acidity": {
+        "description": ""
+      },
+      "free sulfur dioxide": {
+        "description": ""
+      },
+      "pH": {
+        "description": ""
+      },
+      "quality": {
+        "description": ""
+      },
+      "residual sugar": {
+        "description": ""
+      },
+      "sulphates": {
+        "description": ""
+      },
+      "total sulfur dioxide": {
+        "description": ""
+      },
+      "type": {
+        "description": ""
+      },
+      "volatile acidity": {
+        "description": ""
+      }
+    },
+    "great_expectations_version": "0.12.9",
+    "notes": {
+      "content": [
+        "_To add additional notes, edit the <code>meta.notes.content</code> field in the appropriate Expectation json file._"
+      ],
+      "format": "markdown"
+    }
+  }
+}
