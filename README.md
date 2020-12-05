@@ -40,7 +40,7 @@ pset_final/
 
 ```
 
-## Why no unit tests?
+## Why no unit tests, Docker or build files?
 
 Great Expectations is effectively a "unit-test" for data expectations, thus this entire repository is more or less unit-testing.  
 
