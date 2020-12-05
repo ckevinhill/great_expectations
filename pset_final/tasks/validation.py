@@ -16,6 +16,9 @@ class GreatExpectationValidationTask(Task):
     """A Task that executes a GreatExpectations Validation
     Suite on a specified data-set."""
 
+    # Validation override:
+    skip_validation = luigi.BoolParameter(default=False)
+
     # Location for data to validate:
     data_dir = luigi.Parameter(default="data")
     data_sub_dir = luigi.Parameter(default="training")
@@ -31,20 +34,39 @@ class GreatExpectationValidationTask(Task):
     def requires(self):
         return DownloadTrainingDataTask(s3_file=self.data_file)
 
-    def output(self):
-        return SuffixPreservingLocalTarget(
-            os.path.join(
-                self.validation_dir,
-                self.datasource_name,
-                self.data_dir,
-                self.data_sub_dir,
-                "_SUCCESS.txt",
-            )
+    def get_output_path(self):
+        data_file = str(self.data_file).replace(".", "_")
+        return os.path.join(
+            self.validation_dir,
+            self.datasource_name,
+            self.data_dir,
+            self.data_sub_dir,
+            data_file,
+            "_SUCCESS.txt",
         )
+
+    def output(self):
+        return SuffixPreservingLocalTarget(self.get_output_path())
 
     def run(self):
         """Executes a specified Great Expectations validation suite for a
         specified data source."""
+
+        # Create a run identifier that is meaningfully related to the pipeline execution:
+        run_id = {
+            "run_name": self.datasource_name
+            + "-"
+            + self.validation_sub_dir
+            + "_validation",  # insert your own run_name here
+            "run_time": datetime.datetime.now(datetime.timezone.utc),
+        }
+
+        # GUARD STATMENT:
+        # Override option provided for demonstration purposes:
+        if self.skip_validation:
+            with self.output().open("w") as w:
+                w.write(str(run_id))
+            return
 
         # Get a Great Expectations context:
         context = ge.data_context.DataContext()
@@ -58,15 +80,6 @@ class GreatExpectationValidationTask(Task):
         batch_kwargs = {"path": data_file_path, "datasource": self.datasource_name}
 
         batch = context.get_batch(batch_kwargs, self.datasource_name)
-
-        # Create a run identifier that is meaningfully related to the pipeline execution:
-        run_id = {
-            "run_name": self.datasource_name
-            + "-"
-            + self.validation_sub_dir
-            + "_validation",  # insert your own run_name here
-            "run_time": datetime.datetime.now(datetime.timezone.utc),
-        }
 
         # Validate data batch vs. expectation suite.  Using run_validation_operator
         # instead of batch.validate() to invoke data docs update operations.
